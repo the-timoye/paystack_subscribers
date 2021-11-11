@@ -1,4 +1,4 @@
-# SCHEMA
+# SCHEMA BEFORE CLEANUP
 
  |-- active_subscriptions: long (nullable = true)
  |-- amount: long (nullable = true)
@@ -47,4 +47,33 @@
  |    |    |-- updatedAt: string (nullable = true)
  |-- total_subscriptions: long (nullable = true)
  |-- total_subscriptions_revenue: long (nullable = true)
+ |-- updatedAt: string (nullable = true)
+
+
+ # SCHEMA AFTER CLEANUP
+  |-- name: string (nullable = true)
+ |-- total_subscriptions: long (nullable = true)
+ |-- total_subscriptions_revenue: long (nullable = true)
+ |-- plan_code: string (nullable = true)
+ |-- createdAt_pln: string (nullable = true)
+ |-- currency: string (nullable = true)
+ |-- customer: long (nullable = true)
+ |-- integration: long (nullable = true)
+ |-- domain: string (nullable = true)
+ |-- start: long (nullable = true)
+ |-- status: string (nullable = true)
+ |-- quantity: long (nullable = true)
+ |-- amount: long (nullable = true)
+ |-- subscription_code: string (nullable = true)
+ |-- email_token: string (nullable = true)
+ |-- authorization: long (nullable = true)
+ |-- easy_cron_id: long (nullable = true)
+ |-- cron_expression: string (nullable = true)
+ |-- next_payment_date: string (nullable = true)
+ |-- open_invoice: string (nullable = true)
+ |-- invoice_limit: long (nullable = true)
+ |-- id: long (nullable = true)
+ |-- split_code: double (nullable = true)
+ |-- cancelledAt: double (nullable = true)
+ |-- createdAt_sub: string (nullable = true)
  |-- updatedAt: string (nullable = true)
