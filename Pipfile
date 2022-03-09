@@ -8,7 +8,9 @@ verify_ssl = true
 [packages]
 requests = "*"
 pandas = "*"
-pyspark = "*"
 
 [requires]
 python_version = "3.8"
+
+[packages.pyspark]
+extras = [ "sql",]
