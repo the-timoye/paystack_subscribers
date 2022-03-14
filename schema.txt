@@ -1,4 +1,35 @@
-# SCHEMA BEFORE CLEANUP
+# SCHEMA IMMEDIATELY AFTER EXTRACTION
+
+#   Column   
+---  ------  
+ 0   subscriptions       
+ 1   pages                         
+ 2   domain                       
+ 3   name                          
+ 4   plan_code                 
+ 5   description               
+ 6   amount                      
+ 7   interval                    
+ 8   invoice_limit               
+ 9   send_invoices               
+ 10  send_sms                    
+ 11  hosted_page                 
+ 12  hosted_page_url    
+ 13  hosted_page_summary
+ 14  currency                    
+ 15  migrate                     
+ 16  is_deleted                  
+ 17  is_archived                 
+ 18  id                          
+ 19  integration                 
+ 20  createdAt                   
+ 21  updatedAt                   
+ 22  total_subscriptions         
+ 23  active_subscriptions        
+ 24  total_subscriptions_revenue
+
+
+# SCHEMA AFTER EXTRACTION, BEFORE CLEANUP
 
  |-- active_subscriptions: long (nullable = true)
  |-- amount: long (nullable = true)

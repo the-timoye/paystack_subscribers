@@ -10,9 +10,11 @@ def fetch_plans():
     try:
         plans = get_request('plan')
         df = pd.DataFrame(data=plans.json()['data'])
+
         plans_with_subscriptions = df[df["total_subscriptions"] > 0].explode(
             'subscriptions')
-        plans_with_subs = plans_with_subscriptions[
+
+        plans_with_subscriptions = plans_with_subscriptions[
             [
                 "id",
                 'name',
@@ -26,11 +28,12 @@ def fetch_plans():
             ]
         ]
 
-        plans_with_subs['subscriptions'].to_json('subs.json', orient='records')
+        plans_with_subscriptions['subscriptions'].to_json(
+            'subs.json', orient='records')
         subscriptions = pd.read_json("subs.json")
 
-        plans_with_subs.pop('subscriptions')
-        new_df = plans_with_subs.set_index('id').join(
+        plans_with_subscriptions.pop('subscriptions')
+        new_df = plans_with_subscriptions.set_index('id').join(
             subscriptions.set_index('plan'), lsuffix="_pln", rsuffix="_sub")
 
         new_df["no_of_payments"] = new_df['total_subscriptions_revenue'] // \
